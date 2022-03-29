@@ -19,6 +19,7 @@ const indexRouter = require('./routes/index')
 const authorRouter = require('./routes/authors')
 
 app.use(expressLayouts)
+app.use(boadyParser.urlencoded({limit:'10mb', extended: false}))
 app.use(express.static('public'))
 app.use('/', indexRouter)
 app.use('/authors', authorRouter)
